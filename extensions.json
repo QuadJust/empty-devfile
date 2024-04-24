@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "eclipse-cdt.cdt-gdb-vscode",
+    "llvm-vs-code-extensions.vscode-clangd"
+  ]
+}
