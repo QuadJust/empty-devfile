@@ -2,6 +2,43 @@ schemaVersion: 2.2.0
 metadata:
   name: empty-devfile
 components:
+  - container:
+      cpuLimit: '4'
+      cpuRequest: '1'
+      endpoints:
+        - exposure: none
+          name: debug
+          protocol: tcp
+          targetPort: 5005
+        - exposure: public
+          name: hello-greeting-endpoint
+          path: /hello/greeting/devspaces-user
+          protocol: http
+          targetPort: 8080
+      env:
+        - name: QUARKUS_HTTP_HOST
+          value: 0.0.0.0
+        - name: CHE_DASHBOARD_URL
+          value: https://devspaces.apps.shishika-blue.apac.aws.cee.support
+        - name: CHE_PLUGIN_REGISTRY_URL
+          value: https://devspaces.apps.shishika-blue.apac.aws.cee.support/plugin-registry/v3
+        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
+          value: http://plugin-registry.devspaces.svc:8080/v3
+        - name: CLUSTER_CONSOLE_URL
+          value: https://console-openshift-console.apps.shishika-blue.apac.aws.cee.support
+        - name: CLUSTER_CONSOLE_TITLE
+          value: OpenShift console
+        - name: OPENVSX_REGISTRY_URL
+          value: ''
+      image: registry.redhat.io/devspaces/udi-rhel8@sha256:de81824e6ccf82a286a28566432d4f43928a989c570578c4b4df9484ef136cca
+      memoryLimit: 8G
+      memoryRequest: 4G
+      mountSources: true
+      sourceMapping: /projects
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+    name: tools
   - name: universal-developer-image
     container:
 #      image: docker.io/library/ubuntu:22.04
