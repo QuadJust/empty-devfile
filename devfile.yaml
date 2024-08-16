@@ -5,16 +5,6 @@ components:
   - container:
       cpuLimit: '4'
       cpuRequest: '1'
-      endpoints:
-        - exposure: none
-          name: debug
-          protocol: tcp
-          targetPort: 5005
-        - exposure: public
-          name: hello-greeting-endpoint
-          path: /hello/greeting/devspaces-user
-          protocol: http
-          targetPort: 8080
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
