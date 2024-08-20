@@ -40,7 +40,7 @@ components:
           value: OpenShift console
         - name: OPENVSX_REGISTRY_URL
           value: ''
-      image: image-registry.openshift-image-registry.svc:5000/ns1/test-tools@sha256:0db6287b9aeac845d230d4b322cc05d20f406221d4a1d9df102a8021ef8bbd60
+      image: image-registry.openshift-image-registry.svc:5000/ns1/test-tools@sha256:a18308d3e08dda214c904d0c906cffbe7df20e82e85be8c91581e7edc00e431d
       memoryLimit: 8G
       memoryRequest: 4G
       mountSources: true
